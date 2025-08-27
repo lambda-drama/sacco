@@ -6,16 +6,21 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "company",
   "saving_account",
   "transaction_type",
-  "type_of_transaction",
-  "amount",
-  "mode_of_payment",
   "column_break_wffd",
-  "reference_no",
   "date",
-  "gl_entry",
-  "approval_status"
+  "approval_status",
+  "section_break_qggu",
+  "amount",
+  "column_break_vmqw",
+  "mode_of_payment",
+  "section_break_fshg",
+  "reference_no",
+  "payment_entry",
+  "column_break_tpfb",
+  "gl_entry"
  ],
  "fields": [
   {
@@ -31,15 +36,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Transaction Type",
-   "options": "Deposit\nWithdrawal\nTransfer\nInterest Posting",
-   "reqd": 1
-  },
-  {
-   "fieldname": "type_of_transaction",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Type Of Transaction",
-   "options": "Deposit\nWithdrawal",
+   "options": "Deposit\nWithdrawal\nTransfer\nInterest Posting\nLoan Repayment\nLoan Disbursement",
    "reqd": 1
   },
   {
@@ -53,9 +50,9 @@
   },
   {
    "fieldname": "mode_of_payment",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Mode Of Payment",
-   "options": "Cash\nMobile\nMoney\nBank",
+   "options": "Mode of Payment",
    "reqd": 1
   },
   {
@@ -65,9 +62,11 @@
   {
    "fieldname": "reference_no",
    "fieldtype": "Data",
-   "label": "Reference No"
+   "label": "Reference No",
+   "reqd": 1
   },
   {
+   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Datetime",
    "label": "Date",
@@ -86,12 +85,43 @@
    "label": "Approval Status",
    "options": "Pending\nApproved\nRejected",
    "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_qggu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_vmqw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_fshg",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "column_break_tpfb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_entry",
+   "fieldtype": "Link",
+   "label": "Payment Entry",
+   "options": "Payment Entry"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-26 22:06:32.498177",
+ "modified": "2025-08-27 19:25:53.015628",
  "modified_by": "Administrator",
  "module": "Sacco",
  "name": "Transaction",
