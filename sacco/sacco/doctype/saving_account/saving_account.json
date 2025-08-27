@@ -1,13 +1,12 @@
 {
  "actions": [],
- "allow_rename": 1,
  "autoname": "SAV-.#####",
  "creation": "2025-08-26 21:28:08.572540",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "account_number",
   "member",
+  "account_number",
   "balance",
   "column_break_ckbq",
   "interest_rate",
@@ -27,9 +26,7 @@
    "fieldname": "account_number",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Account Number",
-   "read_only": 1,
-   "reqd": 1
+   "label": "Account Number"
   },
   {
    "default": "0.00",
@@ -68,7 +65,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-26 21:47:20.934460",
+ "modified": "2025-08-27 16:54:08.430913",
  "modified_by": "Administrator",
  "module": "Sacco",
  "name": "Saving Account",
@@ -91,5 +88,6 @@
  "row_format": "Dynamic",
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "account_number"
 }
