@@ -1,0 +1,21 @@
+[
+ {
+  "allow_guest": 0,
+  "api_method": "generate_member_id",
+  "cron_format": null,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Server Script",
+  "doctype_event": "Before Insert",
+  "enable_rate_limit": 0,
+  "event_frequency": "All",
+  "modified": "2025-08-27 16:13:59.825384",
+  "module": "Sacco",
+  "name": "Member Id",
+  "rate_limit_count": 5,
+  "rate_limit_seconds": 86400,
+  "reference_doctype": "Customer",
+  "script": "if not doc.custom_member_id:\n    count = frappe.db.count(\"Customer\")\n    last = frappe.db.get_value(\"Customer\", {}, \"custom_member_id\", order_by=\"creation desc\")\n    num = 1\n    if last:\n        try:\n            last_num = int(last.split(\"-\")[-1])\n            num = max(count + 1, last_num + 1)\n        except (ValueError, IndexError):\n            num = count + 1\n    else:\n        num = count + 1\n    doc.custom_member_id = f\"MEM-{num:05d}\"",
+  "script_type": "DocType Event"
+ }
+]

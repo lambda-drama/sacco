@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:TRANS-{#####}-{DD}-{MM}",
+ "creation": "2025-08-26 21:48:31.897680",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "saving_account",
+  "transaction_type",
+  "type_of_transaction",
+  "amount",
+  "mode_of_payment",
+  "column_break_wffd",
+  "reference_no",
+  "date",
+  "gl_entry",
+  "approval_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "saving_account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Saving Account",
+   "options": "Saving Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "transaction_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Transaction Type",
+   "options": "Deposit\nWithdrawal\nTransfer\nInterest Posting",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_of_transaction",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type Of Transaction",
+   "options": "Deposit\nWithdrawal",
+   "reqd": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Select",
+   "label": "Mode Of Payment",
+   "options": "Cash\nMobile\nMoney\nBank",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_wffd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "Reference No"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Datetime",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gl_entry",
+   "fieldtype": "Link",
+   "label": "GL Entry",
+   "options": "GL Entry"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "label": "Approval Status",
+   "options": "Pending\nApproved\nRejected",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-26 22:06:32.498177",
+ "modified_by": "Administrator",
+ "module": "Sacco",
+ "name": "Transaction",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
