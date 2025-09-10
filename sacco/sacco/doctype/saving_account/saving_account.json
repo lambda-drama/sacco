@@ -44,9 +44,7 @@
    "fieldname": "interest_rate",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Interest Rate",
-   "non_negative": 1,
-   "reqd": 1
+   "label": "Interest Rate"
   },
   {
    "fieldname": "accrued_interest",
@@ -65,7 +63,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-27 16:54:08.430913",
+ "modified": "2025-08-27 23:17:45.729800",
  "modified_by": "Administrator",
  "module": "Sacco",
  "name": "Saving Account",

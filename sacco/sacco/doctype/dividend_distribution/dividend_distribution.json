@@ -6,23 +6,19 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "year",
-  "basis",
-  "total_surplus",
+  "period_type",
+  "period_start",
+  "period_end",
   "column_break_oaqs",
   "posting_date",
   "status",
+  "basis",
   "section_break_wkly",
-  "dividend_rule"
+  "dividend_rule",
+  "section_break_qjow",
+  "total_surplus"
  ],
  "fields": [
-  {
-   "fieldname": "year",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Year",
-   "reqd": 1
-  },
   {
    "default": "Both",
    "fieldname": "basis",
@@ -37,7 +33,7 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Total Surplus",
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "column_break_oaqs",
@@ -67,12 +63,35 @@
    "fieldtype": "Table",
    "label": "Dividend Rule",
    "options": "Dividend Rule"
+  },
+  {
+   "fieldname": "period_type",
+   "fieldtype": "Select",
+   "label": "Period Type",
+   "options": "\nYear\nMonths",
+   "reqd": 1
+  },
+  {
+   "fieldname": "period_start",
+   "fieldtype": "Date",
+   "label": "Period Start",
+   "reqd": 1
+  },
+  {
+   "fieldname": "period_end",
+   "fieldtype": "Date",
+   "label": "Period End",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_qjow",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-26 23:08:58.288732",
+ "modified": "2025-08-27 23:28:38.930294",
  "modified_by": "Administrator",
  "module": "Sacco",
  "name": "Dividend Distribution",
